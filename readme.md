@@ -3,6 +3,9 @@ Time : 2021 summer
 
 ## lecture
 1. It's available  on [Bilibili(黑马程序员匠心之作|C++教程从0到1入门编程)](https://www.bilibili.com/video/BV1et411b73Z)
+
+<br>
+
 ![Bilibili Playlist](https://i.pinimg.com/564x/46/d6/0a/46d60aa03500498f333664e2fb339b23.jpg)
 
 2. lecture note available  on CSDN
@@ -13,7 +16,7 @@ Time : 2021 summer
 <br>
 
 ## Study Progress
-- [lec01-lec20](#lec01-lec20) 2021/08/02
+- [lec01-lec11](#lec01-lec11) 2021/08/02
 
 
 <br>
