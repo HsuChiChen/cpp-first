@@ -17,6 +17,7 @@ Time : 2021 summer
 
 ## Study Progress
 - [lec01-lec11](#lec01-lec11) 2021/08/02
+- [lec12-lec30](#lec12-lec30) 2021/08/03
 
 
 <br>
@@ -118,3 +119,14 @@ make clean
 
 9. 字符占1位元組 `char a = 'a'`
 - 透過`(int)a`強轉字符型為對應的ASCII編碼`A-65 a-97`
+
+<br>
+
+## lec12-lec30
+1. 字符串
+- C風格 `char str1[] = "hello world";`
+- C++風格 `string str = "hello world";`須包含頭文件`#include<string>`
+
+2. `bool` true=1, false=0，占用一個byte
+
+3. `bool`類型只要非0的值都代表真
