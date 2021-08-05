@@ -15,8 +15,8 @@ hw04:hw04.cpp
 hw05:hw05.cpp
 	g++ -o hw05 hw05.cpp
 	./hw05
-hw06:hw06.cpp
-	g++ -o hw06 hw06.cpp
+hw06:hw06.cpp #split to 3 files
+	g++ hw06.cpp fun/swap.cpp -o hw06
 	./hw06
 hw07:hw07.cpp
 	g++ -o hw07 hw07.cpp
