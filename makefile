@@ -1,4 +1,4 @@
-OUTPUT := hw01 hw02 hw04 hw05 hw06 hw07 hw08 hw09 hw10 hw11
+OUTPUT := hw01 hw02 hw04 hw05 hw06 hw07 hw08 hw09 hw10 hw11 hw12
 
 hw01:hw01.cpp
 	g++ -o hw01 hw01.cpp
@@ -33,6 +33,12 @@ hw10:hw10.cpp
 hw11:hw11.cpp
 	g++ -o hw11 hw11.cpp
 	./hw11
+hw12:hw12.cpp
+	g++ -o hw12 hw12.cpp
+	./hw12
+hw13:hw13.cpp
+	g++ -o hw13 hw13.cpp
+	./hw13
 
 .PHONY: clean
 clean:
