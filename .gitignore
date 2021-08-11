@@ -1,5 +1,9 @@
 *
 !*.cpp
+!*.h
 !*.md
 !*makefile
+
 !img
+!fun
+!include
