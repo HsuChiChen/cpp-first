@@ -24,7 +24,7 @@ hw07:hw07.cpp
 hw08:hw08.cpp
 	g++ -o hw08 hw08.cpp
 	./hw08
-hw9:hw09.cpp
+hw09:hw09.cpp
 	g++ -o hw09 hw09.cpp
 	./hw09
 hw10:hw10.cpp
