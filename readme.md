@@ -299,4 +299,32 @@ const int * const p3 = &a;
 - 定義結構體時的關鍵字是 `struct` 不可省略
 創建結構體變量時，關鍵字 `struct` 可以省略
 
+<br>
+
 ## lec66-lec80
+1. 結構體指針可以通過 `->` 操作符 來訪問結構體中的成員
+2. 在結構體中可以定義另一個結構體作為成員
+3. 用指針傳地址(4 bytes)以減少大量傳值，造成內存浪費
+
+```cpp
+//學生結構體定義
+struct student{
+	//成員列表
+	string name;  //姓名
+	int age;      //年齡
+	int score;    //分數
+};
+
+//const使用場景
+void printStudent(const student *stu){ //加const防止函數體中的誤操作
+	//stu->age = 100; //操作失敗，因為加了const修飾
+	cout << "姓名：" << stu->name << " 年齡：" << stu->age << " 分數：" << stu->score << endl;
+
+}
+int main() {
+	student stu = { "張三",18,100 };
+	printStudent(&stu);
+	system("pause");
+	return 0;
+}
+```
