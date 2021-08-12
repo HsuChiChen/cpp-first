@@ -22,7 +22,8 @@ Time : 2021 summer
 - [lec46-lec55](#lec46-lec55) 2021/08/05
 - [lec56-lec65](#lec56-lec65) 2021/08/10
 - [lec66-lec77](#lec66-lec77) 2021/08/11
-- [lec78-lec99](#lec78-lec99) 2021/08/12
+- [lec78-lec89](#lec78-lec89) 2021/08/12
+- [lec90-lec100](#lec90-lec100) 2021/08/13
 
 <br>
 
@@ -328,3 +329,41 @@ int main() {
 	return 0;
 }
 ```
+
+<br>
+
+## lec78-lec89
+1. [內存四區](https://www.geeksforgeeks.org/memory-layout-of-c-program/)
+![](https://media.geeksforgeeks.org/wp-content/uploads/memoryLayoutC.jpg)
+- 代碼區(text segment) : 存放CPU執行的機器指令<br>
+​  **共享** : 對於頻繁被執行的程序，只需要在內存中有一份代碼即可<br>
+​ **唯讀** : 使其只讀的原因是防止程序意外地修改了它的指令
+
+- 全局區(data segment) : 全局變量、靜態變量、常量區、字符串常量和其他常量也存放在此，該區域的數據在程序結束後由操作系統釋放
+
+  - **data區**主要存放的是已經初始化的全局變量、靜態變量和常量
+
+  - **bss區**主要存放的是未初始化的全局變量、靜態變量，這些未初始化的數據在程序執行前會自動被系統初始化為0或者`NULL`
+
+  - **常量區**是全局區中劃分的一個小區域，里面存放的是常量，如const修飾的全局變量、字符串常量等
+
+- 棧區(stack) : 主要存放**局部變量**、**局部常量**不要返回局部變量的地址，棧區開闢的數據由編譯器自動釋放
+
+- 堆區(heap) : 由程序員分配釋放，若程序員不釋放，程序結束時由操作系統回收。用於動態內存分配。堆在內存中位於BSS區和棧區之間，在C++中主要利用`new`在堆區開闢內存
+
+2. `new 數據類型`
+```cpp
+int* a = new int(10);
+delete a;
+
+//數組
+int* arr = new int[10];
+delete[] arr;
+```
+3. 引用 `數據類型 &别名 = 原名`
+```cpp
+int a = 10;
+int &b = a;
+```
+
+# lec90-lec100

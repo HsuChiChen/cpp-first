@@ -160,7 +160,7 @@ void modifyperson(struct directory * abs){
     cout << "請輸入要修改的聯繫人:" << endl;
     string name;
     cin >> name;
-    int ret = isexist(abs, name);
+    int ret = isexist(abs, name); //abs已經是地址
     if(ret != 1){
         //姓名
         cout << "請輸入姓名" << endl;
