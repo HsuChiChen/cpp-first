@@ -367,3 +367,124 @@ int &b = a;
 ```
 
 # lec90-lec100
+1. 引用必須初始化；在初始化後，不可以改變
+```cpp
+int a = 10;
+int b = 20;
+//int &c; //錯誤，引用必須初始化
+int &c = a; //一旦初始化後，就不可以更改
+c = b; //這是賦值操作，不是更改引用
+```
+
+2. 引用做函數參數使用讓形參修飾實，效果等同地址傳遞
+
+3. 不要返回局部變量引用
+
+4. 引用本質是指針常量，但是所有的指針操作編譯器都幫我們做了
+```cpp
+//發現是引用，轉換為 int* const ref = &a;
+void func(int& ref){
+	ref = 100; // ref是引用，轉換為*ref = 100
+}
+int main(){
+	int a = 10;
+    
+    //自動轉換為 int* const ref = &a; 指針常量是指針指向不可改，也說明為什麽引用不可更改
+	int& ref = a; 
+	ref = 20; //內部發現ref是引用，自動幫我們轉換為:*ref = 20;
+    
+	cout << "a:" << a << endl;
+	cout << "ref:" << ref << endl;
+    
+	func(a);
+	return 0;
+}
+```
+
+5. 在函數形參列表中，可以加const修飾形參，防止形參改變實參
+```cpp
+//引用使用的場景，通常用來修飾形參
+void showValue(const int& v) {
+	//v += 10;
+	cout << v << endl;
+}
+
+int main() {
+	//int& ref = 10;  引用本身需要一個合法的內存空間，因此這行錯誤
+	//加入const就可以了，編譯器優化代碼，int temp = 10; const int& ref = temp;
+	const int& ref = 10;
+
+	//ref = 100;  //加入const後不可以修改變量
+	cout << ref << endl;
+
+	//函數中利用常量引用防止誤操作修改實參
+	int a = 10;
+	showValue(a);
+	return 0;
+}
+```
+
+6. 在C++中，函數的形參列表中的形參是可以有默認值的 `返回值類型 函數名 （參數= 默認值）{}`
+```cpp
+int func(int a, int b = 10, int c = 10) {
+	return a + b + c;
+}
+//1. 如果某個位置參數有默認值，那麽從這個位置往後，從左向右，必須都要有默認值
+//2. 如果函數聲明有默認值，函數實現的時候就不能有默認參數
+int func2(int a = 10, int b = 10);
+int func2(int a, int b) {
+	return a + b;
+}
+
+int main() {
+	cout << "ret = " << func(20, 20) << endl;
+	cout << "ret = " << func(100) << endl;
+	return 0;
+}
+```
+
+7. 在C++中，函數的形參列表里可以有占位參數，用來做占位，調用函數時必須填補該位置`返回值類型 函數名 (數據類型){}`
+```cpp
+//函數占位參數 ，占位參數也可以有默認參數
+void func(int a, int) {
+	cout << "this is func" << endl;
+}
+int main() {
+	func(10,10); //占位參數必須填補
+	return 0;
+}
+```
+
+8. 函數名可以相同，提高覆用性
+- 同一個作用域下
+- 函數名稱相同
+- 函數**參數類型**、**個數**或者**順序**不同
+- 函數的返回值不可以作為函數重載的條件
+
+```cpp
+//1、引用作為重載條件
+void func(int &a){
+	cout << "func (int &a) 調用 " << endl;
+}
+
+void func(const int &a){
+	cout << "func (const int &a) 調用 " << endl;
+}
+
+//2、函數重載碰到函數默認參數
+void func2(int a, int b = 10){
+	cout << "func2(int a, int b = 10) 調用" << endl;
+}
+
+void func2(int a){
+	cout << "func2(int a) 調用" << endl;
+}
+
+int main() {
+	int a = 10;
+	func(a); //調用無const
+	func(10);//調用有const
+	//func2(10); //碰到默認參數產生歧義，需要避免
+	return 0;
+}
+```
