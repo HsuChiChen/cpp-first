@@ -26,7 +26,7 @@ hw05:hw05.cpp
 	@mv hw05 build/hw05
 	@cd build &&\
 	./hw05
-hw06:hw06.cpp #split to 3 files
+hw06:hw06.cpp fun/swap.cpp   #split to 3 files
 	g++ hw06.cpp fun/swap.cpp -o hw06
 	@mv hw06 build/hw06
 	@cd build &&\
@@ -81,8 +81,8 @@ hw16:hw16.cpp
 	@mv hw16 build/hw16
 	@cd build &&\
 	./hw16
-hw17:hw17.cpp
-	g++ -o hw17 hw17.cpp
+hw17:hw17.cpp fun/circle.cpp fun/point.cpp #split to 5 files
+	g++ hw17.cpp fun/point.cpp fun/circle.cpp -o hw17
 	@mv hw17 build/hw17
 	@cd build &&\
 	./hw17
