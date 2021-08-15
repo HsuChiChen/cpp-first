@@ -1,10 +1,10 @@
 *
-!*.cpp
-!*.h
-!*.md
-!*makefile
 
+!build/
 !img
 !fun
 !include
-!exe
+
+!*.*
+!*.md
+!makefile
