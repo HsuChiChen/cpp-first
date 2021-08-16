@@ -91,6 +91,27 @@ hw18:hw18.cpp
 	@mv hw18 build/hw18
 	@cd build &&\
 	./hw18
+hw19:hw19.cpp
+	g++ -o hw19 hw19.cpp
+	@mv hw19 build/hw19
+	@cd build &&\
+	./hw19
+hw20:hw20.cpp
+	g++ -o hw20 hw20.cpp
+	@mv hw20 build/hw20
+	@cd build &&\
+	./hw20
+hw21:hw21.cpp
+	g++ -o hw21 hw21.cpp
+	@mv hw21 build/hw21
+	@cd build &&\
+	./hw21
+hw22:hw22.cpp
+	g++ -o hw22 hw22.cpp
+	@mv hw22 build/hw22
+	@cd build &&\
+	./hw22
+
 
 .PHONY: clean
 #clean:
