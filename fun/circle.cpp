@@ -1,17 +1,17 @@
 #include "../include/circle.h"
 
-void setR(int r){
+void circle::setR(int r){
     m_r = r;
 }
 
-int getR(){
+int circle::getR(){
     return m_r;
 }
 
-void setcircle(point center){
+void circle::setcircle(point center){
     m_center = center;
 }
 
-point getcenter(){
+point circle::getcenter(){
     return m_center;
 }
