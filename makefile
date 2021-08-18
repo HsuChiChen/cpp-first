@@ -111,7 +111,56 @@ hw22:hw22.cpp
 	@mv hw22 build/hw22
 	@cd build &&\
 	./hw22
-
+hw23:hw23.cpp
+	g++ -o hw23 hw23.cpp
+	@mv hw23 build/hw23
+	@cd build &&\
+	./hw23
+hw24:hw24.cpp
+	g++ -o hw24 hw24.cpp
+	@mv hw24 build/hw24
+	@cd build &&\
+	./hw24
+hw25:hw25.cpp
+	g++ -o hw25 hw25.cpp
+	@mv hw25 build/hw25
+	@cd build &&\
+	./hw25
+hw26:hw26.cpp
+	g++ -o hw26 hw26.cpp
+	@mv hw26 build/hw26
+	@cd build &&\
+	./hw26
+hw27:hw27.cpp
+	g++ -o hw27 hw27.cpp
+	@mv hw27 build/hw27
+	@cd build &&\
+	./hw27
+hw28:hw28.cpp
+	g++ -o hw28 hw28.cpp
+	@mv hw28 build/hw28
+	@cd build &&\
+	./hw28
+hw29:hw29.cpp
+	g++ -o hw29 hw29.cpp
+	@mv hw29 build/hw29
+	@cd build &&\
+	./hw29
+hw30:hw30.cpp
+	g++ -o hw30 hw30.cpp
+	@mv hw30 build/hw30
+	@cd build &&\
+	./hw30
+hw31:hw31.cpp
+	g++ -o hw31 hw31.cpp
+	@mv hw31 build/hw31
+	@cd build &&\
+	./hw31
+hw32:hw32.cpp
+	g++ -o hw32 hw32.cpp
+	@mv hw32 build/hw32
+	@cd build &&\
+	./hw32
 
 .PHONY: clean
 #clean:

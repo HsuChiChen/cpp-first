@@ -1,3 +1,6 @@
+//影片P78
+//內存四區
+
 #include <iostream>
 using namespace std;
 int a=100; //global
