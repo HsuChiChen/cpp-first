@@ -1,3 +1,6 @@
+//影片P113
+//靜態成員函數
+
 #include <iostream>
 using namespace std;
 
@@ -7,7 +10,7 @@ public:
         m_a = 100; //靜態成員函數可以訪問靜態成員變量
         
         //m_b = 20;  //靜態成員函數不可以訪問非靜態成員變量
-        //因為這個數據屬於特定的對象，無法區分到底是哪一個對象的
+        //因為這個數據屬於特定的對象，因此無法區分到底是哪一個對象的
         cout << "static void function" << endl;
     }
     static int m_a; //靜態成員變量，類內聲明
