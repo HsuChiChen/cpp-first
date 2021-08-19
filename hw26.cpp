@@ -9,6 +9,7 @@ class building; //前置聲明
 class dude{
 public:
     dude();
+    ~dude();
     void visit();
     building *m_building;
 };
@@ -31,6 +32,11 @@ building::building(){
 
 dude::dude(){
     m_building = new building;
+}
+
+dude::~dude(){
+    delete m_building;
+    m_building = NULL; //防止野指針出現
 }
 
 void dude::visit(){

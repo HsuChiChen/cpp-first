@@ -677,7 +677,9 @@ public:
 ## lec115-lec120
 - hw23
 - hw24
+- hw25
 - hw26
+- hw27
 
 1. this指針<br>
 `C++`通過提供特殊的對象指針 : **this指針**，解決多個同類型的對象會共用非靜態成員函數。**this指針指向被調用的成員函數所屬的對象**
@@ -688,7 +690,7 @@ public:
 
 2. C++中空指針空指針`NULL`也是可以調用成員函數的，但是也要注意有沒有用到`this`指針。
 
-3. `const`修飾成員函數
+3. 	
 	- 常函數
 		- 成員函數後加const後我們稱為這個函數為**常函數**
 		- 常函數內不可以修改成員屬性
@@ -697,16 +699,25 @@ public:
 		- 聲明對象前加`const`稱該對象為常對象
 		- 常對象只能調用常函數與修改`mutable`成員變數
 
-4. 
-
-```cpp
-class building{
+4. 友元(`friend`)
+	- 目的:就是讓一個函數或者類 訪問另一個類中私有成員
+	1. 全局函數
+	```cpp
+	class building{
     friend void dude(building *building);
-public:  
-...
-```
+	public:  
+	...
+	```
 
-
+	2. 類
+	```cpp
+	friend class dude;
+	```
+	3. 成員函數
+	```cpp
+	//dude類中的visit成員函數 是Building好朋友，可以訪問私有內容
+	friend void dude::visit();
+	```
 
 <br>
 
