@@ -1,3 +1,6 @@
+//影片P120
+//friend function
+
 #include <iostream>
 #include <string>
 using namespace std;
