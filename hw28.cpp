@@ -1,5 +1,5 @@
 //影片P121
-//加號運算重載
+//加號運算符重載
 
 #include <iostream>
 using namespace std;

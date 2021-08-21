@@ -2,165 +2,195 @@
 #OUTPUT := *.txt
 
 hw01:hw01.cpp
-	g++ -o hw01 hw01.cpp
+	@g++ -o hw01 hw01.cpp
 	@mv hw01 build/hw01
 	@cd build &&\
 	./hw01
 hw02:hw02.cpp
-	g++ -o hw02 hw02.cpp
+	@g++ -o hw02 hw02.cpp
 	@mv hw02 build/hw02
 	@cd build &&\
 	./hw02
 hw03:hw03.cpp
-	g++ -o hw03 hw03.cpp
+	@g++ -o hw03 hw03.cpp
 	@mv hw03 build/hw03
 	@cd build &&\
 	./hw03
 hw04:hw04.cpp
-	g++ -o hw04 hw04.cpp
+	@g++ -o hw04 hw04.cpp
 	@mv hw04 build/hw04
 	@cd build &&\
 	./hw04
 hw05:hw05.cpp
-	g++ -o hw05 hw05.cpp
+	@g++ -o hw05 hw05.cpp
 	@mv hw05 build/hw05
 	@cd build &&\
 	./hw05
 hw06:hw06.cpp fun/swap.cpp   #split to 3 files
-	g++ hw06.cpp fun/swap.cpp -o hw06
+	@g++ hw06.cpp fun/swap.cpp -o hw06
 	@mv hw06 build/hw06
 	@cd build &&\
 	./hw06
 hw07:hw07.cpp
-	g++ -o hw07 hw07.cpp
+	@g++ -o hw07 hw07.cpp
 	@mv hw07 build/hw07
 	@cd build &&\
 	./hw07
 hw08:hw08.cpp
-	g++ -o hw08 hw08.cpp
+	@g++ -o hw08 hw08.cpp
 	@mv hw08 build/hw08
 	@cd build &&\
 	./hw08
 hw09:hw09.cpp
-	g++ -o hw09 hw09.cpp
+	@g++ -o hw09 hw09.cpp
 	@mv hw09 build/hw09
 	@cd build &&\
 	./hw09
 hw10:hw10.cpp
-	g++ -o hw10 hw10.cpp
+	@g++ -o hw10 hw10.cpp
 	@mv hw10 build/hw10
 	@cd build &&\
 	./hw10
 hw11:hw11.cpp
-	g++ -o hw11 hw11.cpp
+	@g++ -o hw11 hw11.cpp
 	@mv hw11 build/hw11
 	@cd build &&\
 	./hw11
 hw12:hw12.cpp
-	g++ -o hw12 hw12.cpp
+	@g++ -o hw12 hw12.cpp
 	@mv hw12 build/hw12
 	@cd build &&\
 	./hw12
 hw13:hw13.cpp
-	g++ -o hw13 hw13.cpp
+	@g++ -o hw13 hw13.cpp
 	@mv hw13 build/hw13
 	@cd build &&\
 	./hw13
 hw14:hw14.cpp
-	g++ -o hw14 hw14.cpp
+	@g++ -o hw14 hw14.cpp
 	@mv hw14 build/hw14
 	@cd build &&\
 	./hw14
 hw15:hw15.cpp
-	g++ -o hw15 hw15.cpp
+	@g++ -o hw15 hw15.cpp
 	@mv hw15 build/hw15
 	@cd build &&\
 	./hw15
 hw16:hw16.cpp
-	g++ -o hw16 hw16.cpp
+	@g++ -o hw16 hw16.cpp
 	@mv hw16 build/hw16
 	@cd build &&\
 	./hw16
 hw17:hw17.cpp fun/circle.cpp fun/point.cpp #split to 5 files
-	g++ hw17.cpp fun/point.cpp fun/circle.cpp -o hw17
+	@g++ hw17.cpp fun/point.cpp fun/circle.cpp -o hw17
 	@mv hw17 build/hw17
 	@cd build &&\
 	./hw17
 hw18:hw18.cpp
-	g++ -o hw18 hw18.cpp
+	@g++ -o hw18 hw18.cpp
 	@mv hw18 build/hw18
 	@cd build &&\
 	./hw18
 hw19:hw19.cpp
-	g++ -o hw19 hw19.cpp
+	@g++ -o hw19 hw19.cpp
 	@mv hw19 build/hw19
 	@cd build &&\
 	./hw19
 hw20:hw20.cpp
-	g++ -o hw20 hw20.cpp
+	@g++ -o hw20 hw20.cpp
 	@mv hw20 build/hw20
 	@cd build &&\
 	./hw20
 hw21:hw21.cpp
-	g++ -o hw21 hw21.cpp
+	@g++ -o hw21 hw21.cpp
 	@mv hw21 build/hw21
 	@cd build &&\
 	./hw21
 hw22:hw22.cpp
-	g++ -o hw22 hw22.cpp
+	@g++ -o hw22 hw22.cpp
 	@mv hw22 build/hw22
 	@cd build &&\
 	./hw22
 hw23:hw23.cpp
-	g++ -o hw23 hw23.cpp
+	@g++ -o hw23 hw23.cpp
 	@mv hw23 build/hw23
 	@cd build &&\
 	./hw23
 hw24:hw24.cpp
-	g++ -o hw24 hw24.cpp
+	@g++ -o hw24 hw24.cpp
 	@mv hw24 build/hw24
 	@cd build &&\
 	./hw24
 hw25:hw25.cpp
-	g++ -o hw25 hw25.cpp
+	@g++ -o hw25 hw25.cpp
 	@mv hw25 build/hw25
 	@cd build &&\
 	./hw25
 hw26:hw26.cpp
-	g++ -o hw26 hw26.cpp
+	@g++ -o hw26 hw26.cpp
 	@mv hw26 build/hw26
 	@cd build &&\
 	./hw26
 hw27:hw27.cpp
-	g++ -o hw27 hw27.cpp
+	@g++ -o hw27 hw27.cpp
 	@mv hw27 build/hw27
 	@cd build &&\
 	./hw27
 hw28:hw28.cpp
-	g++ -o hw28 hw28.cpp
+	@g++ -o hw28 hw28.cpp
 	@mv hw28 build/hw28
 	@cd build &&\
 	./hw28
 hw29:hw29.cpp
-	g++ -o hw29 hw29.cpp
+	@g++ -o hw29 hw29.cpp
 	@mv hw29 build/hw29
 	@cd build &&\
 	./hw29
 hw30:hw30.cpp
-	g++ -o hw30 hw30.cpp
+	@g++ -o hw30 hw30.cpp
 	@mv hw30 build/hw30
 	@cd build &&\
 	./hw30
 hw31:hw31.cpp
-	g++ -o hw31 hw31.cpp
+	@g++ -o hw31 hw31.cpp
 	@mv hw31 build/hw31
 	@cd build &&\
 	./hw31
 hw32:hw32.cpp
-	g++ -o hw32 hw32.cpp
+	@g++ -o hw32 hw32.cpp
 	@mv hw32 build/hw32
 	@cd build &&\
 	./hw32
+hw33:hw33.cpp
+	@g++ -o hw33 hw33.cpp
+	@mv hw33 build/hw33
+	@cd build &&\
+	./hw33
+hw34:hw34.cpp
+	@g++ -o hw34 hw34.cpp
+	@mv hw34 build/hw34
+	@cd build &&\
+	./hw34
+hw35:hw35.cpp
+	@g++ -o hw35 hw35.cpp
+	@mv hw35 build/hw35
+	@cd build &&\
+	./hw35
+hw36:hw36.cpp
+	@g++ -o hw36 hw36.cpp
+	@mv hw36 build/hw36
+	@cd build &&\
+	./hw36
+hw37:hw37.cpp
+	@g++ -o hw37 hw37.cpp
+	@mv hw37 build/hw37
+	@cd build &&\
+	./hw37
+hw38:hw38.cpp
+	@g++ -o hw38 hw38.cpp
+	@mv hw38 build/hw38
+	@cd build &&\
+	./hw38
 
 .PHONY: clean
 #clean:

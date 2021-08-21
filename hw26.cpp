@@ -1,5 +1,5 @@
-//影片P120
-//friend function
+//影片P119
+//friend class
 
 #include <iostream>
 #include <string>
