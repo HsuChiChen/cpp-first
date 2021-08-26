@@ -191,6 +191,41 @@ hw38:hw38.cpp
 	@mv hw38 build/hw38
 	@cd build &&\
 	./hw38
+hw39:hw39.cpp
+	@g++ -o hw39 hw39.cpp
+	@mv hw39 build/hw39
+	@cd build &&\
+	./hw39
+hw40:hw40.cpp
+	@g++ -o hw40 hw40.cpp
+	@mv hw40 build/hw40
+	@cd build &&\
+	./hw40
+hw41:hw41.cpp
+	@g++ -o hw41 hw41.cpp
+	@mv hw41 build/hw41
+	@cd build &&\
+	./hw41
+hw42:hw42.cpp
+	@g++ -o hw42 hw42.cpp
+	@mv hw42 build/hw42
+	@cd build &&\
+	./hw42
+hw43:hw43.cpp
+	@g++ -o hw43 hw43.cpp
+	@mv hw43 build/hw43
+	@cd build &&\
+	./hw43
+hw44:hw44.cpp
+	@g++ -o hw44 hw44.cpp
+	@mv hw44 build/hw44
+	@cd build &&\
+	./hw44
+hw45:hw45.cpp
+	@g++ -o hw45 hw45.cpp
+	@mv hw45 build/hw45
+	@cd build &&\
+	./hw45
 
 .PHONY: clean
 #clean:

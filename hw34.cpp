@@ -5,14 +5,14 @@ using namespace std;
 
 class animal{
 public:
-    virtual void speak(){
+    virtual void speak(){ //父類虛函數必須要有virtual關鍵字
         cout << "animal is speaking" << endl;
     }
 };
 
 class cat :public animal{
 public:
-    void speak(){
+    void speak(){ //子類有沒有virtual關鍵字都可以，寫不寫virtual編譯器都會為其自動添加一個virtual
         cout << "cat is speaking" << endl;
     }
 };
@@ -24,8 +24,7 @@ void do_speak(animal &animal){ //animal &animal = cat 父類引用指向子類�
 }
 
 void test01(){
-    cat cat01;
-    do_speak(cat01);
+    cout << sizeof(animal) << endl;
 }
 
 int main(){
