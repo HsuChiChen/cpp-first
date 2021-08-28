@@ -31,7 +31,8 @@ Time : 2021 summer
 - [lec115-lec120](#lec115-lec120) 2021/08/19
 - [lec121-lec131](#lec121-lec131) 2021/08/21
 - [lec132-lec142](#lec132-lec142) 2021/08/26
-- [lec143-lec166](#lec143-lec166) 2021/08/28
+- [lec143-lec149](#lec143-lec149) 2021/08/28
+- [lec150-lec166](#lec150-lec166) 2021/08/29
 
 <br>
 
@@ -915,7 +916,7 @@ virtual ~類名() = 0;
 
 <br>
 
-## lec143-lec166
+## lec143-lec149
 - hw39
 - hw40
 - hw41
@@ -995,3 +996,8 @@ Person p = {"張三"  , 18};
 //4、寫文件
 ofs.write((const char *)&p, sizeof(p)); // (字符指針指向內存中一段存儲空間,讀寫的字節數)
 ```
+
+
+<br>
+
+## lec150-lec166
