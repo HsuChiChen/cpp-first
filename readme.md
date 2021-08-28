@@ -31,7 +31,7 @@ Time : 2021 summer
 - [lec115-lec120](#lec115-lec120) 2021/08/19
 - [lec121-lec131](#lec121-lec131) 2021/08/21
 - [lec132-lec142](#lec132-lec142) 2021/08/26
-- [lec143-lec142](#lec132-lec166) 2021/08/27
+- [lec143-lec166](#lec143-lec166) 2021/08/28
 
 <br>
 
@@ -159,6 +159,23 @@ make clean
 2. 字符串
 - C風格 `char str1[] = "hello world";`
 - C++風格 `string str = "hello world";`須包含頭文件`#include<string>`
+- 初始化
+	1. 通過字符串初始化
+	```cpp
+	string s1 = "hello world!";
+	```
+	2. 通過複製另外一個字符串完成初始化
+	```cpp
+	string s3 = s2;
+	```
+	3. 通過構造函數初始化
+	```cpp
+	string s2("hello world!");
+	```
+	4. 通過某些字符初始化
+	```cpp
+	string s4(10,'0'); //長度為10，均為0的數組
+	```
 
 3. `bool` true=1, false=0，占用一個byte
 
@@ -899,3 +916,82 @@ virtual ~類名() = 0;
 <br>
 
 ## lec143-lec166
+- hw39
+- hw40
+- hw41
+- hw42
+- hw43
+
+1. 寫文件
+	1. 包含頭文件   
+	```cpp
+	#include <fstream>
+	```
+	2. 創建流對象  
+	```cpp
+	ofstream ofs; //or fstream ofs;
+	```
+	3. 打開文件
+	```cpp
+	ofs.open("path/file",way to open);
+	```
+	4. 寫數據
+	```cpp
+	ofs << "data";
+	```
+	5. 關閉文件
+	```cpp
+	ofs.close();
+	```
+2. 打開方式
+
+| 打開方式    | 解釋                       |
+| ----------- | -------------------------- |
+| ios::in     | 為讀文件而打開文件         |
+| ios::out    | 為寫文件而打開文件         |
+| ios::ate    | 初始位置：文件尾           |
+| ios::app    | 追加方式寫文件             |
+| ios::trunc  | 如果文件存在先刪除，再創建 |
+| ios::binary | 二進制方式                 |
+
+2. 讀文件
+```cpp
+//第一種方式
+char buf[1024] = {0};
+while (ifs >> buf){
+	cout << buf << endl;
+}
+
+//第二種
+char buf[1024] = {0};
+while (ifs.getline(buf,sizeof(buf))){
+	cout << buf << endl;
+}
+
+//第三種
+string buf;
+while (getline(ifs, buf)){
+	cout << buf << endl;
+}
+//第四種
+char c;
+while ((c = ifs.get()) != EOF){
+	cout << c;
+}
+```
+
+3. 二進制寫文件
+```cpp
+//1、包含頭文件
+
+//2、創建輸出流對象
+ofstream ofs("person.txt", ios::out | ios::binary); //可2.3合併有構造函數
+
+//3、打開文件
+//ofs.open("person.txt", ios::out | ios::binary);
+
+Person p = {"張三"  , 18};
+
+//4、寫文件
+ofs.write((const char *)&p, sizeof(p)); // (字符指針指向內存中一段存儲空間,讀寫的字節數)
+```
