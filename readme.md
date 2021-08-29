@@ -32,7 +32,8 @@ Time : 2021 summer
 - [lec121-lec131](#lec121-lec131) 2021/08/21
 - [lec132-lec142](#lec132-lec142) 2021/08/26
 - [lec143-lec149](#lec143-lec149) 2021/08/28
-- [lec150-lec166](#lec150-lec166) 2021/08/29
+- [c-style-string](#c-style-string) 2021/08/29
+- [lec150-lec166](#lec150-lec166) 2021/08/30
 
 <br>
 
@@ -1000,4 +1001,111 @@ ofs.write((const char *)&p, sizeof(p)); // (字符指針指向內存中一段存
 
 <br>
 
+## c-style-string
+- hw43
+
+參考[中文教學](https://www.youtube.com/channel/UC9Jk6B_ROKowxzXoQAuR6tA)、[cplusplus網站](https://www.cplusplus.com/reference/cstring/)、[programiz](https://www.programiz.com/c-programming/library-function/string.h/strcat)，
+注意此部分於`C++`的標頭檔`string`(屬於OOP中的class)不同。`C`語言使用`string.h`；`C++`沿用`C`使用`cstring`。
+
+### size_t (資料型態)<br>
+Unsigned integral type，32位元4bytes；64位元8bytes
+
+<br>
+
+### NULL<br>
+等於`\0`，而\是跳脫字元(脫離原字元的意思)
+
+<br>
+
+### strlen (長度)
+`size_t strlen( const char *str );` 傳入一個字串 str，回傳這個字串的長度，而 '\0' 不計入長度（但 '\n' 計入）。其中的回傳值型態 size_t 通常是無號整數型別。
+
+<br>
+
+### strcpy (複製)
+```cpp
+char * strcpy ( char * destination, const char * source );
+```
+1. 功能: 將 source 的值複製給 destination。不能用`=`指派字串，要用`strcpy`。
+2. 型態: `const char * source`不代表一定要指派`const`，而是告訴使用者，所指派的值不會被變動。
+等同於:
+```cpp
+const char *sou1 = new char[11];
+const char *sou2 = sou1;
+```
+3. 範例
+```cpp
+char *str1 = "C programming";
+char str2[20];
+strcpy(str2, str1);
+```
+4. 範例2<br>
+由於`des`儲存的是第一個位置，因此當想替換字串
+`Hi, I am Mary` -> `Hi, I am John`
+```cpp
+char *ch = new char[21];
+strcpy(ch, "Hi, I am Mary");
+char newname[] = "John";
+strcpy(ch + strlen(ch) - strlen(newname), newname);
+std::cout << ch << std::endl;
+```
+
+<br>
+
+### strcat (串接)
+1. 功能: 將 source 的內容，串接在 destination 原先內容的後面。
+2. 型態: `char * strcat ( char * destination, const char * source );`
+3. 範例:
+```cpp
+char word[1000] = "1234";
+strcat(word, "567");
+std::cout << word << std::endl;
+```
+
+<br>
+
+### strcmp (比較)
+1. 功能: 從第一個字元開始逐一比對 str1 與 str2 的所有字元。比對過程若有不一樣的字元時：
+
+|ASCII比對|結果|
+|:-:|:-:|
+|str1 > str2|正值|
+|str1 < str2|負值|
+|str1 == str2|0|
+2. 型態: `int strcmp ( const char * str1, const char * str2 );`
+3. 範例:
+```cpp
+char word1[] = "abcd";
+char word2[] = "Abcd";
+int i = strcmp(word1, word2);
+```
+
+<br>
+
+### strstr (尋找)
+1. 功能: 運算出 str2 在 str1 中第一次出現的位置。若不存在結果為 NULL。
+2. 型態: `const char * strstr ( const char * str1, const char * str2 );`
+3. 範例:
+```cpp
+char word1[] = "33551saber";
+char *pc = strstr(word1, "551");
+std::cout << pc << std::endl;
+//輸出是551saber，因為字串取值會取到空字元
+```
+
+### strtok (切割)
+1. 功能: 依照 delimiters 的內容切割 str。delimiters 中的各個字元為或的關係。str 的內容會被改變。
+2. 型態: `char * strtok ( char * str, const char * delimiters );`
+3. 範例:
+```cpp
+char work[] = "abc,def,ghi.hfd";
+char *tok = strtok(work, ",."); //"或"的關係
+while(tok != NULL){ //NULL = /0(結束的控制字元)
+    tok = strtok(NULL, ",."); //剩下的字符數組要使用NULL讀取
+}
+```
+
+<br>
+
 ## lec150-lec166
+- hw44

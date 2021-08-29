@@ -1,8 +1,10 @@
-all:main.cpp fun/circle.cpp fun/point.cpp #split to 5 files
-	@g++ main.cpp fun/point.cpp fun/circle.cpp -o main
+all:main.cpp fun/content.cpp fun/employee.cpp fun/manager.cpp fun/boss.cpp #split to 3 files
+	@g++ main.cpp fun/content.cpp fun/employee.cpp fun/manager.cpp fun/boss.cpp -o main
 	@mv main build/main
 	@cd build &&\
-	./hw17
+	./main
+
+.PHONY: clean
 clean:
 	@rm -f build/*
 	@echo "clean all file in dir \"build\""
