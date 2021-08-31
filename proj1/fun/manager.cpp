@@ -10,7 +10,7 @@ void manager::show_info(){
     cout << "職工編號: " << this->id
          << "\t職工姓名: " << this->name
          << "\t崗位: " << this->get_dep_id()
-         << "\t崗位職責: 完成x老闆交給的任務"
+         << "\t崗位職責: 完成老闆交給的任務，並下發任務給員工"
          << endl;
 }
 
