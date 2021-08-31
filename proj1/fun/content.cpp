@@ -14,10 +14,19 @@ content::content(){
 	}
 
 	//2.文件存在數據為空
+	// char ch;
+	// if (!(ifs >> ch))
+	// {
+	// 	cout << "empty file" << endl;
+	// 	this->emp_num = 0;
+	// 	this->emp_arr = 0;
+	// 	this->file_is_emp = true; //初始化文件是否為空
+	// 	ifs.close();
+	// 	return;
+	// }
 	char ch;
-	ifs >> ch;
-	cerr << (int)ch << endl;
-	if(ifs.eof()){
+	ifs >> ch; //先去讀一個字符
+	if(ifs.eof()){ //該字符為EOF
 		cout << "empty file" << endl;
 		this->emp_num = 0;
 		this->emp_arr = 0;
@@ -26,6 +35,10 @@ content::content(){
 		return;
 	}
 
+	//3.文件存在並且紀錄數據
+	int num = this->get_emp_num();
+	cout << "職工人數為" << num << endl;
+	this->emp_num = num;
 
 	// //初始化屬性
 	// this->emp_num = 0;
@@ -143,6 +156,22 @@ void content::save(){ //保存文件
 
 	//關閉文件
 	ofs.close();
+}
+
+int content::get_emp_num(){ //統計文件中的人數
+	ifstream ifs;
+	ifs.open(FILENAME, ios::in); //打開文件，模式:讀
+
+	int id;
+	string name;
+	int dep_id;
+	int num = 0;
+
+	//因為>>會忽略空格，所以是依序讀取，讀取到則為1
+	while(ifs >> id && ifs >> name && ifs >> dep_id){
+		num++; //統計人數變量
+	}
+	return num;
 }
 
 content::~content(){ //把heap區釋放乾淨

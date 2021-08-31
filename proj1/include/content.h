@@ -19,6 +19,7 @@ public:
     int emp_num; //紀錄職工人數
     worker **emp_arr; //二級指針(指針的指針)
     void save(); //保存文件
-    bool file_is_emp; //判斷文件是否為空
     void add_emp(); //添加職工
+    bool file_is_emp; //判斷文件是否為空
+    int get_emp_num(); //統計文件中的人數
 };
