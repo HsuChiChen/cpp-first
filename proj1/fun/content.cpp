@@ -1,9 +1,35 @@
 #include "../include/content.h"
 
 content::content(){
-	//初始化屬性
-	this->emp_num = 0;
-	this->emp_arr = NULL;
+	ifstream ifs;
+	ifs.open(FILENAME, ios::in); //讀文件
+	//1. 文件不存在
+	if(!ifs.is_open()){ //bool is_open();
+		cout << "file isn't exist" << endl;
+		this->emp_num = 0;
+		this->emp_arr = 0;
+		this->file_is_emp = true; //初始化文件是否為空
+		ifs.close();
+		return;
+	}
+
+	//2.文件存在數據為空
+	char ch;
+	ifs >> ch;
+	cerr << (int)ch << endl;
+	if(ifs.eof()){
+		cout << "empty file" << endl;
+		this->emp_num = 0;
+		this->emp_arr = 0;
+		this->file_is_emp = true; //初始化文件是否為空
+		ifs.close();
+		return;
+	}
+
+
+	// //初始化屬性
+	// this->emp_num = 0;
+	// this->emp_arr = NULL;
 }
 
 void content::show_menu(){
@@ -88,6 +114,9 @@ void content::add_emp(){
 		//更新新的職工人數
 		this->emp_num = new_size;
 		system("clear");
+
+		//更新職工不為空標誌
+		this->file_is_emp = false;
 
 		//保存數據到文件中
 		this->save();
