@@ -42,10 +42,13 @@ int main(){
                 vm.add_emp();
                 break;
             case 2: //顯示職工
+                vm.show_emp();
                 break;
             case 3: //刪除職工
+                vm.delete_emp();
                 break;
             case 4: //修改職工
+                vm.mod_emp();
                 break;
             case 5: //查找職工
                 break;

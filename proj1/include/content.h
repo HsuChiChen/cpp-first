@@ -22,4 +22,9 @@ public:
     void add_emp(); //添加職工
     bool file_is_emp; //判斷文件是否為空
     int get_emp_num(); //統計文件中的人數
+    void init_emp(); //初始化員工
+    void show_emp(); //顯示職工
+    void delete_emp(); //刪除職工
+    void mod_emp(); //修改職工
+    int  is_exist(int id); //判斷職工是否存在 存在->返回數組位置；不存在->-1
 };

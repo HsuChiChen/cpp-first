@@ -1,4 +1,9 @@
-#makefile practicce
+#makefile practie
+# = make 會將整個 Makefile 展開後，再決定變數的值。也就是說，變數的值將會是整個 Mackfile 中最後被指定的值。
+#:= 變數的值決定於它在 Makefile 中的位置
+#?= 若變數未定義，則替它指定新的值。否則，採用原有的值。
+#+= 增加變數
+#define 讓變數直接使用"斷行"
 #OUTPUT := *.txt
 
 hw01:hw01.cpp
