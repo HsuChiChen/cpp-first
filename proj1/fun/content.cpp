@@ -329,9 +329,143 @@ void content::mod_emp(){
 	}
 }
 
+//查找職工
+void content::find_emp(){
+	if(this->file_is_emp){
+		cout << "文件不存在或記錄為空" << endl;
+	}
+	else{
+		cout << "請輸入查找的方法:" << endl;
+		cout << "1. 按照職工編號查找" << endl;
+		cout << "2. 按照職工的姓名查找" << endl;
+
+		int select = 0;
+		cin >> select;
+		if(select == 1){
+			//按照編號查
+			int id;
+			cout << "請輸入查找的職工編號" << endl;
+			cin >> id;
+			int ret = is_exist(id);
+			if(ret != -1){
+				//找到職工
+				cout << "查找成功!該職工信息如下:" << endl;
+				this->emp_arr[ret]->show_info();
+			}
+			else{
+				cout << "查找失敗，查無此人" << endl;
+			}
+
+		}
+		else if(select == 2){
+			//按照姓名查
+			string name;
+			cout << "請輸入查找的姓名" << endl;
+			cin >> name;
+
+			//判斷是否查到的標示
+			bool flag = false; //默認未找到
+
+			for(int i=0; i<emp_num; i++){
+				if(this->emp_arr[i]->name == name){
+					cout << "查找成功，職工編號為: " << this->emp_arr[i]->id << " 號" << endl;
+					cout << "信息如下: ";
+					//調用顯示信息多態接口
+					this->emp_arr[i]->show_info();
+					flag = true;
+				}
+			}
+			
+			if(flag == false){
+				cout << "查找失敗，查無此人!" << endl; 
+			}
+		}
+		else{
+			cout << "輸入選項有誤" << endl;
+		}
+	}
+} 
+
+//按照編號排序
+void content::sort_emp(){
+	if(this->file_is_emp){
+		cout << "文件不存在或記錄為空" << endl;
+	}
+	else{
+		cout << "請選擇排序方式" << endl;
+		cout << "1. 按職工號進行升序" << endl;
+		cout << "2. 按職工號進行降序" << endl;
+
+		int select = 0;
+		cin >> select;
+		//selection sort
+		for(int i=0; i<this->emp_num; i++){
+			int min_max = i; //聲明最小值或最大值下標
+			for(int j=i+1; j<this->emp_num; j++){
+				
+				if(select == 1){ //升序，抓max
+					if(this->emp_arr[min_max]->id > this->emp_arr[j]->id){
+						min_max = j;
+					}
+				}
+				else{ //降序，抓min
+					if(this->emp_arr[min_max]->id < this->emp_arr[j]->id){
+						min_max = j;
+					}
+				}
+			}
+			
+			//判斷一開始認定的最小值或最大值是不是計算計算的最小值或最大值
+			//如果不是，則i與min_max交換數據
+			if(i != min_max){
+				worker *temp = this->emp_arr[i];
+				this->emp_arr[i] = this->emp_arr[min_max];
+				this->emp_arr[min_max] = temp;
+			}
+		}
+		cout << "排序成功!排序後的結果為:" << endl;
+		this->save(); //保存文件
+		this->show_emp();
+	}
+}
+
+//清空文件
+void content::clean_file(){
+	cout << "確定清空?刪除的數據無法回復!" << endl;
+	cout << "1.確定" << endl;
+	cout << "2.返回" << endl;
+
+	int select = 0;
+	cin >> select;
+	if(select == 1){
+		//清空文件
+		ofstream ofs(FILENAME, ios::trunc); //刪除文件後重新創建
+		ofs.close();
+
+		if(this->emp_arr != NULL){
+			//刪除heap中每個職工對象
+			for(int i=0; i<this->emp_num; i++){
+				delete this->emp_arr[i];
+				this->emp_arr[i] = NULL;
+			}
+			//刪除heap中指針數組
+			delete [] this->emp_arr;
+			this->emp_arr = NULL;
+			this->emp_num = 0;
+			this->file_is_emp = true;
+		}
+		cout << "清空成功!" << endl;
+	}
+}
+
 //把heap區釋放乾淨
 content::~content(){
 	if(this->emp_arr != NULL){
+		for(int i=0; i<this->emp_num; i++){
+			if(this->emp_arr[i] != NULL){
+				delete emp_arr[i];
+			}
+		}
 		delete 	[] this->emp_arr;
 		this->emp_arr = NULL;
 	}

@@ -231,6 +231,76 @@ hw45:hw45.cpp
 	@mv hw45 build/hw45
 	@cd build &&\
 	./hw45
+hw46:hw46.cpp
+	@g++ -o hw46 hw46.cpp
+	@mv hw46 build/hw46
+	@cd build &&\
+	./hw46
+hw47:hw47.cpp
+	@g++ -o hw47 hw47.cpp
+	@mv hw47 build/hw47
+	@cd build &&\
+	./hw47
+hw48:hw48.cpp
+	@g++ -o hw48 hw48.cpp
+	@mv hw48 build/hw48
+	@cd build &&\
+	./hw48
+hw49:hw49.cpp
+	@g++ -o hw49 hw49.cpp
+	@mv hw49 build/hw49
+	@cd build &&\
+	./hw49
+hw50:hw50.cpp
+	@g++ -o hw50 hw50.cpp
+	@mv hw50 build/hw50
+	@cd build &&\
+	./hw50
+hw51:hw51.cpp
+	@g++ -o hw51 hw51.cpp
+	@mv hw51 build/hw51
+	@cd build &&\
+	./hw51
+hw52:hw52.cpp
+	@g++ -o hw52 hw52.cpp
+	@mv hw52 build/hw52
+	@cd build &&\
+	./hw52
+hw53:hw53.cpp
+	@g++ -o hw53 hw53.cpp
+	@mv hw53 build/hw53
+	@cd build &&\
+	./hw53
+hw54:hw54.cpp
+	@g++ -o hw54 hw54.cpp
+	@mv hw54 build/hw54
+	@cd build &&\
+	./hw54
+hw55:hw55.cpp
+	@g++ -o hw55 hw55.cpp
+	@mv hw55 build/hw55
+	@cd build &&\
+	./hw55
+hw56:hw56.cpp
+	@g++ -o hw56 hw56.cpp
+	@mv hw56 build/hw56
+	@cd build &&\
+	./hw56
+hw57:hw57.cpp
+	@g++ -o hw57 hw57.cpp
+	@mv hw57 build/hw57
+	@cd build &&\
+	./hw57
+hw58:hw58.cpp
+	@g++ -o hw58 hw58.cpp
+	@mv hw58 build/hw58
+	@cd build &&\
+	./hw58
+hw59:hw59.cpp
+	@g++ -o hw59 hw59.cpp
+	@mv hw59 build/hw59
+	@cd build &&\
+	./hw59
 
 .PHONY: clean
 #clean:

@@ -51,10 +51,13 @@ int main(){
                 vm.mod_emp();
                 break;
             case 5: //查找職工
+                vm.find_emp();
                 break;
             case 6: //排序職工
+                vm.sort_emp();
                 break;
             case 7: //清空文檔
+                vm.clean_file();
                 break;
             default:
                 system("clear");

@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <fstream> //文件操作
+#include <string>
 #include "worker.h"
 #include "employee.h"
 #include "manager.h"
@@ -26,5 +27,8 @@ public:
     void show_emp(); //顯示職工
     void delete_emp(); //刪除職工
     void mod_emp(); //修改職工
+    void find_emp(); //查找職工
+    void sort_emp(); //按照編號排序
+    void clean_file(); //清空文件
     int  is_exist(int id); //判斷職工是否存在 存在->返回數組位置；不存在->-1
 };
