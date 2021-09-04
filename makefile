@@ -241,8 +241,8 @@ hw47:hw47.cpp
 	@mv hw47 build/hw47
 	@cd build &&\
 	./hw47
-hw48:hw48.cpp
-	@g++ -o hw48 hw48.cpp
+hw48:hw48.cpp include/person.hpp  #split to 2 files
+	@g++ -o hw48 hw48.cpp include/person.hpp
 	@mv hw48 build/hw48
 	@cd build &&\
 	./hw48
