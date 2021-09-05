@@ -65,7 +65,7 @@ void test01(){ //在stack的數據，在test01執行完就會被釋放
 
     //3. 隱式轉換法
     person p4 = 10;  // Person p4 = Person(10); 
-	Person p5 = p4;  // Person p5 = Person(p4); 
+	person p5 = p4;  // Person p5 = Person(p4); 
 
     
 

@@ -1218,3 +1218,19 @@ void person<T1, T2>::show(){
 <br>
 
 ## lec181-lec196
+- hw49
+- hw50 (總結知識點)
+
+1. 類模板、友元與全局函數
+	- 全局函數類內實現 - 直接在類內聲明友元即可
+	```cpp
+	friend void print(Person<T1, T2> & p){}
+	```
+	- 全局函數類外實現 - 需要**提前**讓編譯器知道全局函數的存在
+	```cpp
+	template<class T1, class T2> 
+	class Person;
+
+	template<class T1, class T2>
+	void print(Person<T1, T2> & p){}
+	```

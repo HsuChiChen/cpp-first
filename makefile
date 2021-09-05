@@ -251,8 +251,8 @@ hw49:hw49.cpp
 	@mv hw49 build/hw49
 	@cd build &&\
 	./hw49
-hw50:hw50.cpp
-	@g++ -o hw50 hw50.cpp
+hw50:hw50.cpp include/array.hpp #split to 2 files
+	@g++ -o hw50 hw50.cpp include/array.hpp
 	@mv hw50 build/hw50
 	@cd build &&\
 	./hw50
