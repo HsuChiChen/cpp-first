@@ -36,7 +36,8 @@ Time : 2021 summer
 - [lec150-lec158](#lec150-lec158) 2021/08/31
 - [lec159-lec169](#lec159-lec169) 2021/09/03
 - [lec170-lec180](#lec170-lec180) 2021/09/04
-- [lec181-lec196](#lec181-lec196) 2021/09/05
+- [lec181-lec189](#lec181-lec189) 2021/09/05
+- [lec190-lec203](#lec190-lec203) 2021/09/06
 
 <br>
 
@@ -1217,9 +1218,10 @@ void person<T1, T2>::show(){
 
 <br>
 
-## lec181-lec196
+## lec181-lec189
 - hw49
 - hw50 (總結知識點)
+- hw51
 
 1. 類模板、友元與全局函數
 	- 全局函數類內實現 - 直接在類內聲明友元即可
@@ -1234,3 +1236,36 @@ void person<T1, T2>::show(){
 	template<class T1, class T2>
 	void print(Person<T1, T2> & p){}
 	```
+
+2. STL(Standard Template Library,標準模板庫)<br>
+從廣義上分為
+- **容器(container)**<br>
+將運用最廣泛的一些數據結構實現出來
+- **算法(algorithm)**<br>
+分為質變算法(更改區間內的元素)和非質變算法
+- **疊代器(iterator)** - 容器與算法之間連接<br>
+提供一種方法，使之能夠依序尋訪某個容器所含的各個元素，而又無需暴露該容器的內部表示方式。每個容器都有自己專屬的疊代器。使用非常類似於指針
+
+3. 使用方式
+	1. 創建vector容器對象
+	```cpp
+	vector<int> v;
+	```
+	2. 向容器中放數據
+	```cpp
+	v.push_back(10);
+	```
+	3. 疊代器(用來遍歷容器中的元素，每一個容器都有自己的疊代器)
+	```cpp
+	for(vector<int>::iterator it = v.begin(); it != v.end(); it++) {
+		cout << *it << endl;
+	}
+	```
+	也可使用STL提供標準遍歷算法  需頭文件<algorithm>
+	```cpp
+	for_each(v.begin(), v.end(), function);
+	```
+
+<br>
+
+## lec190-lec203
