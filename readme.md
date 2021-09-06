@@ -36,8 +36,8 @@ Time : 2021 summer
 - [lec150-lec158](#lec150-lec158) 2021/08/31
 - [lec159-lec169](#lec159-lec169) 2021/09/03
 - [lec170-lec180](#lec170-lec180) 2021/09/04
-- [lec181-lec189](#lec181-lec189) 2021/09/05
-- [lec190-lec203](#lec190-lec203) 2021/09/06
+- [lec181-lec187](#lec181-lec187) 2021/09/05
+- [lec188-lec192](#lec188-lec192) 2021/09/06
 
 <br>
 
@@ -1218,7 +1218,7 @@ void person<T1, T2>::show(){
 
 <br>
 
-## lec181-lec189
+## lec181-lec187
 - hw49
 - hw50 (總結知識點)
 - hw51
@@ -1268,4 +1268,33 @@ void person<T1, T2>::show(){
 
 <br>
 
-## lec190-lec203
+## lec188-lec192
+- hw52
+
+1. `string`構造函数
+	- `string();`          		   創建一個空的字符串
+	- `string(const char* s);`	   使用字符串s初始化
+	- `string(const string& str);` 使用一個string對象初始化另一個string對象
+	- `string(int n, char c);`     使用n個字符c初始化
+
+2. `string`賦值操作
+- `string& operator=(const char* s);`    char*類型字符串 賦值給當前的字符串
+- `string& operator=(const string &s);`  把字符串s賦給當前的字符串
+- `string& operator=(char c);`           字符賦值給當前的字符串
+- `string& assign(const char *s);`       把字符串s賦給當前的字符串
+- `string& assign(const char *s, int n);`把字符串s的前n個字符賦給當前的字符串
+- `string& assign(const string &s);`     把字符串s賦給當前字符串
+- `string& assign(int n, char c);`       用n個字符c賦給當前字符串
+
+3. `string`字符串拼接
+- `string& operator+=(const char* str);`             重載+=操作符
+- `string& operator+=(const char c);`                重載+=操作符
+- `string& operator+=(const string& str);`           重載+=操作符
+- `string& append(const char *s); `                  把字符串s連接到當前字符串結尾
+- `string& append(const char *s, int n);`            把字符串s的前n個字符連接到當前字符串結尾
+- `string& append(const string &s);`                 同operator+=(const string& str)
+- `string& append(const string &s, int pos, int n);` 字符串s中從pos開始的n個字符連接到字符串結尾
+
+<br>
+
+## lec193-lec200
