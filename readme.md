@@ -16,14 +16,14 @@ Time : 2021 summer
 <br>
 
 ## Study Progress
-- [lec01-lec11](#lec01-lec11) 2021/08/02
-- [lec12-lec28](#lec12-lec28) 2021/08/03
-- [lec29-lec45](#lec29-lec45) 2021/08/04
-- [lec46-lec55](#lec46-lec55) 2021/08/05
-- [lec56-lec65](#lec56-lec65) 2021/08/10
-- [lec66-lec77](#lec66-lec77) 2021/08/11
-- [lec78-lec89](#lec78-lec89) 2021/08/12
-- [lec90-lec99](#lec90-lec99) 2021/08/13
+- [lec001-lec011](#lec001-lec011) 2021/08/02
+- [lec012-lec028](#lec012-lec028) 2021/08/03
+- [lec029-lec045](#lec029-lec045) 2021/08/04
+- [lec046-lec055](#lec046-lec055) 2021/08/05
+- [lec056-lec065](#lec056-lec065) 2021/08/10
+- [lec066-lec077](#lec066-lec077) 2021/08/11
+- [lec078-lec089](#lec078-lec089) 2021/08/12
+- [lec090-lec099](#lec090-lec099) 2021/08/13
 - [lec100-lec103](#lec100-lec103) 2021/08/14
 - [lec104-lec105](#lec104-lec105) 2021/08/15
 - [lec106-lec108](#lec104-lec108) 2021/08/16
@@ -73,7 +73,7 @@ make clean
 
 <br>
 
-## lec01-lec11
+## lec001-lec011
 1. 註解 
 
 |單行註解|多行註解|
@@ -143,7 +143,7 @@ make clean
 
 <br>
 
-## lec12-lec28
+## lec012-lec028
 1. 轉義字符
 
 |轉義字符|含義|ASCII碼值(十進位)|
@@ -199,7 +199,7 @@ make clean
 
 <br>
 
-## lec29-lec45
+## lec029-lec045
 - hw01
 - hw02
 - hw03
@@ -271,7 +271,7 @@ cout << "數組中第二個元素地址為： " << (long)&arr[1] << endl;
 
 <br>
 
-## lec46-lec55
+## lec046-lec055
 - hw04
 - hw05
 - hw06
@@ -291,7 +291,7 @@ int arr[2][3] =
 
 <br>
 
-## lec56-lec70
+## lec056-lec070
 - hw07
 - hw08
 - hw10
@@ -345,7 +345,7 @@ const int * const p3 = &a;
 
 <br>
 
-## lec66-lec77
+## lec066-lec077
 - hw12
 
 1. 結構體指針可以通過 `->` 操作符 來訪問結構體中的成員
@@ -377,7 +377,7 @@ int main() {
 
 <br>
 
-## lec78-lec89
+## lec078-lec089
 - hw13
 
 1. [內存四區](https://www.geeksforgeeks.org/memory-layout-of-c-program/)
@@ -415,7 +415,7 @@ int &b = a;
 
 <br>
 
-## lec90-lec99
+## lec090-lec099
 - hw14
 
 1. 引用必須初始化；在初始化後，不可以改變
