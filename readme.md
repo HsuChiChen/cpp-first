@@ -38,6 +38,8 @@ Time : 2021 summer
 - [lec170-lec180](#lec170-lec180) 2021/09/04
 - [lec181-lec187](#lec181-lec187) 2021/09/05
 - [lec188-lec192](#lec188-lec192) 2021/09/06
+- [lec193-lec204](#lec193-lec204) 2021/09/07
+- [lec205-lec222](#lec205-lec222) 2021/09/08
 
 <br>
 
@@ -1271,6 +1273,10 @@ void person<T1, T2>::show(){
 ## lec188-lec192
 - hw52
 
+1. `string`介紹<br>
+`string`是`C++`風格的字符串，本質上是一個類，類內部封裝了`char*`這個指針，**管理char*所分配的內存**，因此使用者不需要擔心複製越界和取值越界等，是一個`char*`型的容器，此外內部也封裝了很多**成員函數**。
+
+
 1. `string`構造函数
 	- `string();`          		   創建一個空的字符串
 	- `string(const char* s);`	   使用字符串s初始化
@@ -1278,23 +1284,120 @@ void person<T1, T2>::show(){
 	- `string(int n, char c);`     使用n個字符c初始化
 
 2. `string`賦值操作
-- `string& operator=(const char* s);`    char*類型字符串 賦值給當前的字符串
-- `string& operator=(const string &s);`  把字符串s賦給當前的字符串
-- `string& operator=(char c);`           字符賦值給當前的字符串
-- `string& assign(const char *s);`       把字符串s賦給當前的字符串
-- `string& assign(const char *s, int n);`把字符串s的前n個字符賦給當前的字符串
-- `string& assign(const string &s);`     把字符串s賦給當前字符串
-- `string& assign(int n, char c);`       用n個字符c賦給當前字符串
+	- `string& operator=(const char* s);`    char*類型字符串 賦值給當前的字符串
+	- `string& operator=(const string &s);`  把字符串s賦給當前的字符串
+	- `string& operator=(char c);`           字符賦值給當前的字符串
+	- `string& assign(const char *s);`       把字符串s賦給當前的字符串
+	- `string& assign(const char *s, int n);`把字符串s的前n個字符賦給當前的字符串
+	- `string& assign(const string &s);`     把字符串s賦給當前字符串
+	- `string& assign(int n, char c);`       用n個字符c賦給當前字符串
 
 3. `string`字符串拼接
-- `string& operator+=(const char* str);`             重載+=操作符
-- `string& operator+=(const char c);`                重載+=操作符
-- `string& operator+=(const string& str);`           重載+=操作符
-- `string& append(const char *s); `                  把字符串s連接到當前字符串結尾
-- `string& append(const char *s, int n);`            把字符串s的前n個字符連接到當前字符串結尾
-- `string& append(const string &s);`                 同operator+=(const string& str)
-- `string& append(const string &s, int pos, int n);` 字符串s中從pos開始的n個字符連接到字符串結尾
+	- `string& operator+=(const char* str);`             重載+=操作符
+	- `string& operator+=(const char c);`                重載+=操作符
+	- `string& operator+=(const string& str);`           重載+=操作符
+	- `string& append(const char *s); `                  把字符串s連接到當前字符串結尾
+	- `string& append(const char *s, int n);`            把字符串s的前n個字符連接到當前字符串結尾
+	- `string& append(const string &s);`                    同operator+=(const string& str)
+	- `string& append(const string &s, int pos, int n);`    字符串s中從pos開始的n個字符連接到字符串結尾
+
+4. `string`查找和替換(`find`查找是從左往後，`rfind`從右往左，找不到返回`std::string::npos`)
+	- `int find(const string& str, int pos = 0) const;`     查找str第一次出現位置,從pos開始查找
+	- `int find(const char* s, int pos = 0) const; `         查找s第一次出現位置,從pos開始查找
+	- `int find(const char* s, int pos, int n) const; `     從pos位置查找s的前n個字符第一次位置
+	- `int find(const char c, int pos = 0) const; `         查找字符c第一次出現位置
+	- `int rfind(const string& str, int pos = npos) const;` 查找str最後一次位置,從pos開始查找
+	- `int rfind(const char* s, int pos = npos) const;`     查找s最後一次出現位置,從pos開始查找
+	- `int rfind(const char* s, int pos, int n) const;`     從pos查找s的前n個字符最後一次位置
+	- `int rfind(const char c, int pos = 0) const;  `       查找字符c最後一次出現位置
+	- `string& replace(int pos, int n, const string& str); `替換從pos開始n個字符為字符串str
+	- `string& replace(int pos, int n,const char* s); `     替換從pos開始的n個字符為字符串s
 
 <br>
 
-## lec193-lec200
+## lec193-lec204
+- hw53
+- hw54
+
+1. `string`字符串比較
+	- `int compare(const string &s) const;` 與字符串s比較
+	- `int compare(const char *s) const;`   與字符串s比較
+	- 按字符的ASCII碼進行對比`=`->`0`; `>`->`1`; `<`->`-1`
+
+2. `string`字符存取
+	- `char& operator[](int n); ` 通過[]方式取字符
+	- `char& at(int n);   `       通過at方法獲取字符
+
+3. `string`插入和删除
+	- `string& insert(int pos, const char* s);  `    插入字符串
+	- `string& insert(int pos, const string& str); ` 插入字符串
+	- `string& insert(int pos, int n, char c);`      在指定位置插入n個字符c
+	- `string& erase(int pos, int n = npos);`        刪除從Pos開始的n個字符
+
+4. `string`子串
+	- `string substr(int pos = 0, int n = npos) const;` 返回由pos開始的n個字符組成的字符串
+
+5. `vector`介紹<br>
+vector數據結構和數組非常相似，也稱單端數組，不同之處在於vector可以**動態擴展**，而動態擴展並不是在原空間之後續接新空間，而是找更大的內存空間，然後將原數據拷貝新空間，釋放原空間。vector容器的疊代器是支持隨機訪問的疊代器。
+
+6. `vector`構造函数
+	- `vector<T> v; `               採用模板實現類實現，默認構造函數
+	- `vector(v.begin(), v.end());` 將`v[begin(), end())`區間中的元素拷貝給本身
+	- `vector(n, elem);`            構造函數將n個elem拷貝給本身
+	- `vector(const vector &vec);`  拷貝構造函數
+
+7. `vector`賦值操作
+	- `vector& operator=(const vector &vec);` 重載等號操作符
+	- `assign(beg, end);` 將`[beg, end)`區間中的數據拷貝賦值給本身
+	- `assign(n, elem);`  將n個elem拷貝賦值給本身
+
+8. `vector`容量和大小
+	- `empty(); `            判斷容器是否為空
+	- `capacity();`          容器的容量
+	- `size();`              容器中元素的個數
+	- `resize(int num);`     重新指定容器的長度為num，若容器變長，則以默認值填充新位置；如果容器變短，則末尾超出容器長度的元素被刪除
+	- `resize(int num, elem);`重新指定容器的長度為num，若容器變長，則以elem值填充新位置
+
+9. `vector`插入和刪除
+	- `push_back(ele);`                                  尾部插入元素ele
+	- `pop_back();`                                      刪除最後一個元素
+	- `insert(const_iterator pos, ele);`                 疊代器指向位置pos插入元素ele
+	- `insert(const_iterator pos, int count, ele);`      疊代器指向位置pos插入count個元素ele
+	- `erase(const_iterator pos);`                       刪除疊代器指向的元素
+	- `erase(const_iterator start, const_iterator end);` 刪除疊代器從start到end之間的元素
+	- `clear();`                                         刪除容器中所有元素
+
+10. `vector`數據存取
+	- `at(int idx); ` 索引idx所指的數據
+	- `operator[]; `  索引idx所指的數據
+	- `front(); `     容器中第一個數據元素
+	- `back();`       容器中最後一個數據元素
+
+11. `vector`互換容器
+- `swap(vec);`  將vec與本身的元素互換
+- 用途:vector<int>(v)調用拷貝構造函數，並按照`v`目前所用的個數來初始化對象，再利用`swap`成員函數，內部相當於指針進行互換，匿名對象指向原本的容器，而當匿名對象沒有進行綁定操作，會自動進行析構，因此原空間會被釋放。
+```cpp
+vector<int> v;
+for (int i = 0; i < 100000; i++)
+	v.push_back(i);
+v.resize(3);
+//收縮內存
+vector<int>(v).swap(v); //匿名對象
+```
+
+12. `dequeue`原理<br>
+雙端數組(double—ended queue)，deque相對vector，對頭部的插入刪除速度回比較快，但是訪問元素時的速度較慢。
+<br><br>
+deque由**一段一段的定量連續空間**構成。一旦有必要在deque的前端或尾端增加新空間，便配置一段定量連續空間，串接在整個deque的頭端或尾端。deque的最大任務，便是在這些分段的定量連續空間上，維護其整體連續的假象，並提供隨機存取的接口。避開了"重新配置、複製、釋放"的輪回，代價則是複雜的疊代器架構。
+<br><br>
+deque採用一塊所謂的map（注意，不是STL的map容器）作為主控。這裡所謂map是一小塊連續空間，其中每個元素（此處稱為一個節點，node）都是指針，指向另一段（較大的）連續線性空間，稱為緩沖區。
+
+13. `dequeue`構造函數
+	- `deque<T>` deqT;           默認構造形式
+	- `deque(beg, end);`         構造函數將[beg, end)區間中的元素拷貝給本身
+	- `deque(n, elem);`          構造函數將n個elem拷貝給本身。
+	- `deque(const deque &deq);` 拷貝構造函數
+
+<br>
+
+## lec205-lec222
