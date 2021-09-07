@@ -291,7 +291,7 @@ int arr[2][3] =
 
 <br>
 
-## lec056-lec070
+## lec056-lec065
 - hw07
 - hw08
 - hw10
@@ -1338,7 +1338,7 @@ void person<T1, T2>::show(){
 	- `string substr(int pos = 0, int n = npos) const;` 返回由pos開始的n個字符組成的字符串
 
 5. `vector`介紹<br>
-vector數據結構和數組非常相似，也稱單端數組，不同之處在於vector可以**動態擴展**，而動態擴展並不是在原空間之後續接新空間，而是找更大的內存空間，然後將原數據拷貝新空間，釋放原空間。vector容器的疊代器是支持隨機訪問的疊代器。
+vector數據結構和數組非常相似，也稱單端數組，不同之處在於vector可以**動態擴展**，而動態擴展並不是在原空間之後續接新空間，而是找更大的內存空間，然後將原數據拷貝新空間，釋放原空間。由於vector維護的是一個連續線性空間，所以vector容器的疊代器是支持隨機存取。
 
 6. `vector`構造函数
 	- `vector<T> v; `               採用模板實現類實現，默認構造函數
@@ -1384,6 +1384,10 @@ v.resize(3);
 //收縮內存
 vector<int>(v).swap(v); //匿名對象
 ```
+12. `vector`預留空間
+- `reserve(int len);` 容器預留len個元素長度，預留位置不初始化，元素不可訪問
+- 用途:減少vector在動態擴展容量時的擴展次數
+
 
 12. `dequeue`原理<br>
 雙端數組(double—ended queue)，deque相對vector，對頭部的插入刪除速度回比較快，但是訪問元素時的速度較慢。
