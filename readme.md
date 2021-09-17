@@ -39,7 +39,7 @@ Time : 2021 summer
 - [lec181-lec187](#lec181-lec187) 2021/09/05
 - [lec188-lec192](#lec188-lec192) 2021/09/06
 - [lec193-lec204](#lec193-lec204) 2021/09/07
-- [lec205-lec222](#lec205-lec222) 2021/09/08
+- [lec205-lec222](#lec205-lec222) 2021/09/17
 
 <br>
 
@@ -1408,3 +1408,37 @@ deque採用一塊所謂的map（注意，不是STL的map容器）作為主控。
 <br>
 
 ## lec205-lec222
+1. `dequeue`賦值操作
+	- `deque& operator=(const deque &deq);` 重載等號操作符
+	- `assign(beg, end);`                   將`[beg, end)`區間中的數據拷貝
+	- `assign(n, elem);`                    將n個elem拷貝
+
+2. `dequeue`大小操作
+	- `deque.empty();`     判斷容器是否為空
+	- `deque.size();`      返回容器中元素的個數
+	- `deque.resize(num);` 重新指定容器的長度為num，若容器變長，則以默認值填充新位置。如果容器變短，則末尾超出容器長度的元素被刪除
+	- `deque.resize(num, elem);` 重新指定容器的長度為num，若容器變長，則以elem值填充新位置
+	- `deque`沒有像`vector`一樣有`capacity`的概念，因為內部實現不同
+
+3. `dequeue`插入與刪除
+- 兩端插入操作:
+	- `push_back(elem);`   尾部添加一個數據
+	- `push_front(elem);`  頭部插入一個數據
+	- `pop_back();`        刪除最後一個數據
+	- `pop_front();`       刪除第一個數據
+
+- 指定位置操作：
+	- `insert(pos,elem);`   在pos位置插入一個elem元素的拷貝，返回新數據的位置
+	- `insert(pos,n,elem);` 在pos位置插入n個elem數據，無返回值
+	- `insert(pos,beg,end);`在pos位置插入`[beg,end)`區間的數據，無返回值
+	- `clear();`            清空容器的所有數據
+	- `erase(beg,end);`     刪除`[beg,end)`區間的數據，返回下一個數據的位置
+	- `erase(pos);`         刪除pos位置的數據，返回下一個數據的位置
+
+4. `deque`數據存取
+	- `at(int idx); `返回索引idx所指的數據
+	- `operator[]; ` 返回索引idx所指的數據
+	- `front(); `    返回容器中第一個數據元素
+	- `back();`      返回容器中最後一個數據元素
+
+5. 
