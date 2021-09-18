@@ -39,7 +39,8 @@ Time : 2021 summer
 - [lec181-lec187](#lec181-lec187) 2021/09/05
 - [lec188-lec192](#lec188-lec192) 2021/09/06
 - [lec193-lec204](#lec193-lec204) 2021/09/07
-- [lec205-lec222](#lec205-lec222) 2021/09/17
+- [lec205-lec210](#lec205-lec210) 2021/09/17
+- [lec211-lec222](#lec211-lec222) 2021/09/18
 
 <br>
 
@@ -1407,7 +1408,9 @@ deque採用一塊所謂的map（注意，不是STL的map容器）作為主控。
 
 <br>
 
-## lec205-lec222
+## lec205-lec210
+- hw55 (person class存進vector，遍歷每個vector，並將評委分數存到deque，分數用sort排，利用deque容器特性方便去頭去尾，算出平均數後再存進每一個person class裡面)
+
 1. `dequeue`賦值操作
 	- `deque& operator=(const deque &deq);` 重載等號操作符
 	- `assign(beg, end);`                   將`[beg, end)`區間中的數據拷貝
@@ -1441,4 +1444,41 @@ deque採用一塊所謂的map（注意，不是STL的map容器）作為主控。
 	- `front(); `    返回容器中第一個數據元素
 	- `back();`      返回容器中最後一個數據元素
 
-5. 
+<br>
+
+## lec211-lec222
+- hw56
+1. `stack`(First In Last Out, FILO)
+- 構造函數
+	- `stack<T> stk;`            stack採用模板類實現，stack對象的默認構造形式
+	- `stack(const stack &stk);` 拷貝構造函數
+
+- 賦值操作
+	- `stack& operator=(const stack &stk);` 重載等號操作符
+
+- 數據存取
+	- `push(elem);` 向棧頂添加元素
+	- `pop();`      從棧頂移除第一個元素
+	- `top(); `     返回棧頂元素
+
+- 大小操作
+	- `empty();`    判斷堆棧是否為空
+	- `size(); `    返回棧的大小
+
+2. `queue` (First In First Out,FIFO)
+- 構造函數
+	- `queue<T> que;`            queue採用模板類實現，queue對象的默認構造形式
+	- `queue(const queue &que);` 拷貝構造函數
+
+- 賦值操作
+	- `queue& operator=(const queue &que);` 重載等號操作符
+
+- 數據存取
+	- `push(elem);`  往隊尾添加元素
+	- `pop();`       從隊頭移除第一個元素
+	- `back();`      返回最後一個元素
+	- `front(); `    返回第一個元素
+
+- 大小操作
+	- `empty();` 判斷堆棧是否為空
+	- `size(); ` 返回棧的大小
