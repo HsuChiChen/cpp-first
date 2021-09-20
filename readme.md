@@ -1409,7 +1409,7 @@ deque採用一塊所謂的map（注意，不是STL的map容器）作為主控。
 <br>
 
 ## lec205-lec210
-- hw55 (person class存進vector，遍歷每個vector，並將評委分數存到deque，分數用sort排，利用deque容器特性方便去頭去尾，算出平均數後再存進每一個person class裡面)
+- hw55 (`person class`存進`vector`，遍歷每個`vector`，並將評委分數存到`deque`，分數用`sort()`排，利用`deque`容器特性方便去頭去尾，算出平均數後再存進每一個`person class`裡面)
 
 1. `dequeue`賦值操作
 	- `deque& operator=(const deque &deq);` 重載等號操作符
@@ -1448,6 +1448,7 @@ deque採用一塊所謂的map（注意，不是STL的map容器）作為主控。
 
 ## lec211-lec222
 - hw56
+
 1. `stack`(First In Last Out, FILO)
 - 構造函數
 	- `stack<T> stk;`            stack採用模板類實現，stack對象的默認構造形式
@@ -1482,3 +1483,13 @@ deque採用一塊所謂的map（注意，不是STL的map容器）作為主控。
 - 大小操作
 	- `empty();` 判斷堆棧是否為空
 	- `size(); ` 返回棧的大小
+
+3. `list`原理<br>
+環狀雙向鏈表，插入和刪除操作十分方便，修改指針即可，但空間(指針域)和時間(遍歷)額外耗費較大
+![](img/list.png)
+
+4. `list`構造函數
+	- `list<T> lst;`           list採用模板類實現，對象的默認構造形式
+	- `list(beg,end);`         構造函數將`[beg, end)`區間中的元素拷貝給本身
+	- `list(n,elem);`          構造函數將n個elem拷貝給本身
+	- `list(const list &lst);` 拷貝構造函數

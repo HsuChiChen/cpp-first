@@ -1,3 +1,5 @@
+//影片P214
+//自定義數據類型插入queue容器
 #include <iostream>
 #include <queue>
 #include <string>
