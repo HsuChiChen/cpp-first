@@ -301,6 +301,62 @@ hw59:hw59.cpp
 	@mv hw59 build/hw59
 	@cd build &&\
 	./hw59
+hw60:hw60.cpp
+	@g++ -o hw60 hw60.cpp
+	@mv hw60 build/hw60
+	@cd build &&\
+	./hw60
+hw61:hw61.cpp
+	@g++ -o hw61 hw61.cpp
+	@mv hw61 build/hw61
+	@cd build &&\
+	./hw61
+hw62:hw62.cpp
+	@g++ -o hw62 hw62.cpp
+	@mv hw62 build/hw62
+	@cd build &&\
+	./hw62
+hw63:hw63.cpp
+	@g++ -o hw63 hw63.cpp
+	@mv hw63 build/hw63
+	@cd build &&\
+	./hw63
+hw64:hw64.cpp
+	@g++ -o hw64 hw64.cpp
+	@mv hw64 build/hw64
+	@cd build &&\
+	./hw64
+hw65:hw65.cpp
+	@g++ -o hw65 hw65.cpp
+	@mv hw65 build/hw65
+	@cd build &&\
+	./hw65
+hw66:hw66.cpp
+	@g++ -o hw66 hw66.cpp
+	@mv hw66 build/hw66
+	@cd build &&\
+	./hw66
+hw67:hw67.cpp
+	@g++ -o hw67 hw67.cpp
+	@mv hw67 build/hw67
+	@cd build &&\
+	./hw67
+hw68:hw68.cpp
+	@g++ -o hw68 hw68.cpp
+	@mv hw68 build/hw68
+	@cd build &&\
+	./hw68
+hw69:hw69.cpp
+	@g++ -o hw69 hw69.cpp
+	@mv hw69 build/hw69
+	@cd build &&\
+	./hw69
+hw70:hw70.cpp
+	@g++ -o hw70 hw70.cpp
+	@mv hw70 build/hw70
+	@cd build &&\
+	./hw70
+
 
 .PHONY: clean
 #clean:

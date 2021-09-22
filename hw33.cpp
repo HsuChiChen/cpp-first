@@ -13,7 +13,7 @@ public:
 
 class add_num{ 
 public:
-    void operator()(int num1, int num2){ //仿函數非常靈活，沒有固定的寫法
+    int operator()(int num1, int num2){ //仿函數非常靈活，沒有固定的寫法
         return num1 + num2;
     }
 };
@@ -25,7 +25,7 @@ void test01(){
 
 void test02(){
     add_num add01;
-    int ret = add_num(30, 40)
+    int ret = add_num()(30, 40);
     cout << "ret = " << ret << endl;
 
     //匿名函數對象，當前行執行結束後，系統會立即回收掉匿名對象

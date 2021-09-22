@@ -41,6 +41,7 @@ Time : 2021 summer
 - [lec193-lec204](#lec193-lec204) 2021/09/07
 - [lec205-lec210](#lec205-lec210) 2021/09/17
 - [lec211-lec222](#lec211-lec222) 2021/09/18
+- [lec223-lec230](#lec223-lec230) 2021/09/22
 
 <br>
 
@@ -1448,6 +1449,8 @@ deque採用一塊所謂的map（注意，不是STL的map容器）作為主控。
 
 ## lec211-lec222
 - hw56
+- hw57
+- hw58
 
 1. `stack`(First In Last Out, FILO)
 - 構造函數
@@ -1493,3 +1496,114 @@ deque採用一塊所謂的map（注意，不是STL的map容器）作為主控。
 	- `list(beg,end);`         構造函數將`[beg, end)`區間中的元素拷貝給本身
 	- `list(n,elem);`          構造函數將n個elem拷貝給本身
 	- `list(const list &lst);` 拷貝構造函數
+
+5. `list`賦值和交換
+	- `assign(beg, end);`                 將`[beg, end)`區間中的數據拷貝賦值給本身
+	- `assign(n, elem);`                  將n個elem拷貝賦值給本身
+	- `list& operator=(const list &lst);` 重載等號操作符
+	- `swap(lst);`                        將lst與本身的元素互換
+
+6. `list`大小操作
+	- `size(); `            返回容器中元素的個數
+	- `empty(); `           判斷容器是否為空
+	- `resize(num);`        重新指定容器的長度為num，若容器變長，則以默認值填充新位置
+	- `resize(num, elem); ` 重新指定容器的長度為num，若容器變長，則以elem值填充新位置
+
+7. `list`數據存取
+	- `push_back(elem);`       在容器尾部加入一個元素
+	- `pop_back();`            刪除容器中最後一個元素
+	- `push_front(elem);`      在容器開頭插入一個元素
+	- `pop_front();`           從容器開頭移除第一個元素
+	- `insert(pos,elem);`      在pos位置插elem元素的拷貝，返回新數據的位置
+	- `insert(pos,n,elem);`    在pos位置插入n個elem數據，無返回值
+	- `insert(pos,beg,end);`   在pos位置插入`[beg,end)`區間的數據，無返回值
+	- `clear();`               移除容器的所有數據
+	- `erase(beg,end);`        刪除`[beg,end)`區間的數據，返回下一個數據的位置
+	- `erase(pos);`            刪除pos位置的數據，返回下一個數據的位置
+	- `remove(elem);`          刪除容器中所有與elem值匹配的元素
+
+8. `list`數據存取
+	- `front();` 返回第一個元素
+	- `back();`  返回最後一個元素
+
+9. `list`反轉和排序
+	- `reverse();`  反轉鏈表
+	- `sort();`     鏈表排序(成員函數、默認的排序規則，從小到大；指定規則，從大到小)
+
+## lec223-lec230
+- hw59
+- hw60
+- hw61
+
+1. `set`原理
+由**紅黑樹(Red-black Tree)** 實現，紅黑樹是一種自平衡二叉查找樹，可以在自動排序、插入操作和刪除操作上比`vector`快、不可以直接存取元素。<br><br>
+`set`支援唯一鍵值，每個元素值**只能出現一次**；而`multiset`中同一值可以出現多次。
+
+2. `set`構造和賦值
+	- `set<T> st;`                     默認構造函數
+	- `set(const set &st);`            拷貝構造函數
+	- `set& operator=(const set &st);` 重載等號操作符
+
+3. `set`大小和交換
+	- `size();`   返回容器中元素的數目
+	- `empty();`  判斷容器是否為空
+	- `swap(st);` 交換兩個集合容器
+
+4. `set`插入和刪除
+	- `insert(elem);`     在容器中插入元素
+	- `clear();`          清除所有元素
+	- `erase(pos);`       刪除pos疊代器所指的元素，返回下一個元素的疊代器
+	- `erase(beg, end);`  刪除區間`[beg,end)`的所有元素 ，返回下一個元素的疊代器
+	- `erase(elem);`      刪除容器中值為elem的元素
+
+5. `set`查找和統計
+	- `find(key);`   查找key是否存在。存在:返回該鍵的元素的疊代器；不存在:返回`set.end();`
+	- `count(key);`  統計key的元素個數。對於set而言，由於元素值不允許重複，因此只有0、1兩種可能
+
+6. [`pair`用法](https://blog.csdn.net/sevenjoin/article/details/81937695)
+包含在頭文件`#include<utility>`中，pair是將2個數據組合成一組數據，當需要這樣的需求時就可以使用pair，如stl中的`map`就是將key和value放在一起來保存。另一個應用是，當一個函數需要返回2個數據的時候，可以選擇pair。 pair的實現是一個**結構體**，主要的兩個成員變量是`first second`，因為是使用struct不是class，所以可以直接使用pair的成員變量。
+
+7. `pair`創建
+	- `pair<type, type> p ( value1, value2 );`
+	- `pair<type, type> p = make_pair( value1, value2 );`
+
+8. `emplace`函數
+emplace操作是C++11新特性，引入三個成員函數`emlace_front`, `empace`, `emplace_back`分別對應`push_front`, `insert`, `push_back`。<br><br>
+當調用insert時，我們將元素類型的對象傳遞給insert，元素的對象被拷貝到容器中，而當我們使用emplace時，我們將參數傳遞元素類型的構造函數，**emplace使用這些參數在容器管理的內存空間中直接構造元素**。
+
+9. `lambda`匿名函數的定義
+- 語法
+```cpp
+[外部變量訪問方式說明符] (參數) mutable noexcept/throw() -> 返回值類型
+{
+   函數體;
+};
+```
+- mutable參數<br>
+可省略，如果使用則之前的()小括號將不能省略（參數個數可以為 0）。默認情況，對於以值傳遞方式引入的外部變量，不允許在`lambda`表達式內部修改它們的值(可以理解為這部分**變量都是`const`常量**)。而如果想修改它們，就必須使用`mutable`關鍵字。<br><br>注意: 對於以值傳遞方式`[=]`引入的外部變量，`lambda`表達式**修改的是拷貝的那一份**，並不會修改真正的外部變量。
+- 範例
+```cpp
+//display 即為 lambda 匿名函數的函數名
+auto display = [](int a,int b) -> void{cout << a << " " << b;};
+//調用 lambda 函數
+display(10,20);
+```
+
+
+- 參考
+	- [匿名函式wiki](https://zh.wikipedia.org/wiki/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0#C.2B.2B)
+	- [C++11 lambda匿名函数用法详解](http://c.biancheng.net/view/7818.html)
+
+10. [`try throw catch`異常處理](https://www.jb51.net/article/172352.htm)
+```cpp
+try {
+    語句組
+}
+catch(異常類型) {
+    異常處理代碼
+}
+...
+catch(異常類型) {
+    異常處理代碼
+}
+```
