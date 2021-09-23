@@ -1,6 +1,5 @@
 //影片P230
 //set存放自定義數據類型
-
 #include <iostream>
 #include <set>
 using namespace std;
