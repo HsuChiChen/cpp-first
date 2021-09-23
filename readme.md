@@ -1561,7 +1561,7 @@ deque採用一塊所謂的map（注意，不是STL的map容器）作為主控。
 	- `count(key);`  統計key的元素個數。對於set而言，由於元素值不允許重複，因此只有0、1兩種可能
 
 6. [`pair`用法](https://blog.csdn.net/sevenjoin/article/details/81937695)
-包含在頭文件`#include<utility>`中，pair是將2個數據組合成一組數據，當需要這樣的需求時就可以使用pair，如stl中的`map`就是將key和value放在一起來保存。另一個應用是，當一個函數需要返回2個數據的時候，可以選擇pair。 pair的實現是一個**結構體**，主要的兩個成員變量是`first second`，因為是使用struct不是class，所以可以直接使用pair的成員變量。
+包含在頭文件`#include<utility>`中，pair是將2個數據組合成一組數據，當需要這樣的需求時就可以使用pair，如stl中的`map`就是將key和value放在一起來保存。另一個應用是，當一個函數需要返回2個數據的時候，可以選擇pair。 pair的實現是一個**結構體**，主要的兩個成員變量是`first`, `second`，因為是使用struct不是class，所以可以直接使用pair的成員變量。
 
 7. `pair`創建
 	- `pair<type, type> p ( value1, value2 );`
@@ -1571,7 +1571,7 @@ deque採用一塊所謂的map（注意，不是STL的map容器）作為主控。
 emplace操作是C++11新特性，引入三個成員函數`emlace_front`, `empace`, `emplace_back`分別對應`push_front`, `insert`, `push_back`。<br><br>
 當調用insert時，我們將元素類型的對象傳遞給insert，元素的對象被拷貝到容器中，而當我們使用emplace時，我們將參數傳遞元素類型的構造函數，**emplace使用這些參數在容器管理的內存空間中直接構造元素**。
 
-9. `lambda`匿名函數的定義
+9. `lambda`匿名函數
 - 語法
 ```cpp
 [外部變量訪問方式說明符] (參數) mutable noexcept/throw() -> 返回值類型
